@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Administration Settings</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">    
+    
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    
+    <link href="../assets/css/base-admin.css" rel="stylesheet">
+    <link href="../assets/css/base-admin-responsive.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="../assets/css/jquery.ui/jquery.ui.all.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Add New Rule</h3>
+  </div>
+  <div class="modal-body">
+    <p>Define the parameters for the rule using the fields below:</p>
+	<form id="new-rule" class="form-inline">
+		<fieldset>
+			<label for="viewMode">For</label>
+			<select id="viewMode" class="span1">
+			  <option  selected>My</option>
+			  <option>My Team's</option>
+			  <option>All</option>
+			  <option>All across Org's</option>
+			</select>
+			
+			<label for="objectType"></label>
+			<select id="objectType" class="span1">
+			  <option  selected>Accounts</option>
+			  <option>Contacts</option>
+			  <option>Opportunities</option>
+			  <option>Quotes</option>
+			  <option>Orders</option>
+			</select>
+
+			<label for="status"> with Status</label>
+			<select id="objectType" class="span1">
+			  <option  selected>Any</option>
+			  <option>Closed</option>
+			  <option>Pending</option>
+			  <option>Submitted</option>
+			  <option>New</option>
+			</select>
+
+			<label for="change">AND</label>
+			<select id="change" class="span1">
+			  <option  selected>edited</option>
+			  <option>created</option>
+			</select>
+			<label for="time">in</label>
+			<select id="time" class="span2">
+			  <option  selected>last 1 day</option>
+			  <option>last1 week</option>
+			  <option>last 1 month</option>
+			  <option>last 1 month</option>
+			  <option>current month</option>
+			  <option>last quarter</option>
+			  <option>current quarter</option>
+			</select>
+													
+		</fieldset>
+	</form>						
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			
+			<a class="brand" href="./">
+				AMF Admin				
+			</a>		
+			
+			<div class="nav-collapse">
+				<ul class="nav pull-right">
+			
+					<li class="dropdown">
+						
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-user"></i> 
+							AMF Admininstrator
+							<b class="caret"></b>
+						</a>
+						
+						<ul class="dropdown-menu">
+							<li><a href="javascript:;">Logout</a></li>
+						</ul>
+						
+					</li>
+				</ul>
+			
+			</div><!--/.nav-collapse -->	
+	
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+    
+<div class="subnavbar">
+
+	<div class="subnavbar-inner">
+	
+		<div class="container">
+
+			<ul class="mainnav">
+			
+				<li>
+					<a href="./admin-main.html">
+						<i class="icon-home"></i>
+						<span>Home</span>
+					</a>	    				
+				</li>
+
+				<li>
+					<a href="./user.html">
+						<i class="icon-user"></i>
+						<span>User</span>
+					</a>	    				
+				</li>
+				
+				<li>
+					<a href="./static.html">
+						<i class="icon-pushpin"></i>
+						<span>Static</span>
+					</a>	    				
+				</li>
+				
+				<li   class="active">					
+					<a href="./settings.html">
+						<i class="icon-cog"></i>
+						<span>Settings</span>
+					</a>	  				
+				</li>
+
+				<li>
+					<a href="./error.html">
+						<i class="icon-wrench"></i>
+						<span>Development</span>
+					</a>	    				
+				</li>
+							
+			</ul>
+
+		</div> <!-- /container -->
+	
+	</div> <!-- /subnavbar-inner -->
+
+</div> <!-- /subnavbar -->
+    
+
+<div class="main">
+	
+	<div class="main-inner">
+
+	    <div class="container">
+	
+	      <div class="row">
+	      	
+	      	<div class="span5">      		
+	      		
+	      		<div class="widget ">
+	      			
+	      			<div class="widget-header">
+	      				<i class="icon-paper-clip"></i>
+	      				<h3>Attachment Settings</h3>
+	  				</div> <!-- /widget-header -->
+					
+					<div class="widget-content">
+						<form id="edit-profile" class="form-horizontal">
+							<fieldset>
+								
+								<div class="control-group">											
+									<label class="control-label" for="timeTh">Time Threshold</label>
+									<div class="controls">									
+										<input type="text" id="timeTh" style="border:0; color:#f6931f; font-weight:bold;" />
+										<div id="sliderTime"></div>
+									</div> <!-- /controls -->				
+								</div> <!-- /control-group -->
+
+								<div class="control-group">											
+									<label class="control-label" for="sizeTh">Size Threshold</label>
+									<div class="controls">									
+										<input type="text" id="sizeTh" style="border:0; color:#f6931f; font-weight:bold;" class="span1"/>
+										<div id="sliderSize"></div>
+									</div> <!-- /controls -->				
+								</div> <!-- /control-group -->
+																		
+							</fieldset>
+						</form>						
+					</div> <!-- /widget-content -->
+						
+				</div> <!-- /Attachment Settings -->
+	      		
+	      		<div class="widget "> <!-- /Sync Settings -->
+	      			
+	      			<div class="widget-header">
+	      				<i class="icon-refresh"></i>
+	      				<h3>Sync Settings</h3>
+	  				</div> <!-- /widget-header -->
+					
+					<div class="widget-content"> 
+						<form id="edit-profile" class="form-horizontal">
+							<fieldset>
+								<div class="control-group">											
+									<label class="control-label" for="reqSync">Required Sync</label>
+									<div class="controls">
+										<select id="reqSync">
+										  <option>Never</option>
+										  <option>1 day</option>
+										  <option>3 day</option>
+										  <option selected>1 week</option>
+										  <option>1 month</option>
+										  <option>3 months</option>
+										</select>
+									</div> <!-- /controls -->				
+								</div> <!-- /control-group -->										
+								
+							</fieldset>
+						</form>						
+					</div> <!-- /widget-content -->
+						
+				</div> <!-- /Sync Settings -->
+	      		
+	      		<div class="widget "> <!-- Data Visibility Settings -->
+	      			
+	      			<div class="widget-header">
+	      				<i class="icon-eye-open"></i>
+	      				<h3>Visibility Settings</h3>
+	  				</div> <!-- /widget-header -->
+					
+					<div class="widget-content"> 
+						<form id="edit-profile" class="form-horizontal">
+							<fieldset>
+								<div class="control-group">											
+									<label class="control-label" for="visibility">Data Visibility</label>
+									<div class="controls">
+										<select id="visibility">
+										  <option selected>My data ONLY</option>
+										  <option>Team data</option>
+										  <option>All data</option>
+										  <option>All across Org data</option>
+										</select>
+									</div> <!-- /controls -->				
+								</div> <!-- /control-group -->										
+								
+							</fieldset>
+						</form>						
+					</div> <!-- /widget-content -->
+						
+				</div> <!-- Data Visibility Settings -->
+	      		
+		    </div> <!-- /span8 -->
+	      	
+	      	
+	      	<div class="span7">
+				
+				
+				<div class="widget widget-box">
+					
+					<div class="widget-header">
+	      				<h3>Subscription Rules</h3>
+	  				</div> <!-- /widget-header -->
+					
+					<div class="widget-content">
+						<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+						<table class="table table-striped" id="object">
+							<thead>
+								<tr>
+									<th>Active</th>
+									<th>Rules</th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th><a data-toggle="modal" href="#myModal" class="btn btn-primary btn-small pull-right"><i class="icon-plus"></i></a></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<input type="checkbox" class="checkbox" checked/>
+									</td>
+									<td>My</td>
+									<td>Opportunities</td>
+									<td>edited</td>
+									<td>in</td>
+									<td>last week.</td>
+									<td><a href="#"><i class="icon-pencil pull-right"></i></a></td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" class="checkbox"/>
+									</td>
+									<td>All</td>
+									<td>Orders</td>
+									<td>updated</td>
+									<td>in</td>
+									<td>last month.</td>
+									<td><a href="#"><i class="icon-pencil pull-right"></i></a></td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" class="checkbox" checked/>
+									</td>
+									<td>All across Org</td>
+									<td>Contacts</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td><a href="#"><i class="icon-pencil pull-right"></i></a></td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" class="checkbox" checked/>
+									</td>
+									<td>My Team's</td>
+									<td>Orders</td>
+									<td>booked</td>
+									<td>in</td>
+									<td>current quarter</td>
+									<td><a href="#"><i class="icon-pencil pull-right"></i></a></td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" class="checkbox"/>
+									</td>
+									<td>My</td>
+									<td>Activities</td>
+									<td>due</td>
+									<td></td>
+									<td>today</td>
+									<td><a href="#"><i class="icon-pencil pull-right"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+	      				
+						
+					</div> <!-- /widget-content -->
+					
+				</div> <!-- /widget-box -->
+									
+		      </div> <!-- /span4 -->
+	      	
+	      </div> <!-- /row -->
+	
+	    </div> <!-- /container -->
+	    
+	</div> <!-- /main-inner -->
+    
+</div> <!-- /main -->
+    
+    
+    
+ 
+<div class="footer">
+	
+	<div class="footer-inner">
+		
+		<div class="container">
+			
+			<div class="row">
+				
+    			<div class="span12">
+    				&copy; 2012 <a href="http://amindsolutions.com">AMF Admin</a>
+    			</div> <!-- /span12 -->
+    			
+    		</div> <!-- /row -->
+    		
+		</div> <!-- /container -->
+		
+	</div> <!-- /footer-inner -->
+	
+</div> <!-- /footer -->
+    
+
+
+<script src="../assets/js/jquery-1.8.0.min.js"></script>
+<script src="../assets/js/jquery-ui-1.8.23.min.js"></script>
+<script src="../assets/js/jquery.ui.core.min.js"></script>
+<script src="../assets/js/jquery.ui.widget.min.js"></script>
+<script src="../assets/js/jquery.ui.mouse.min.js"></script>
+<script src="../assets/js/jquery.ui.slider.min.js"></script>
+	
+<script src="../assets/js/bootstrap.js"></script>
+<script src="../assets/js/base.js"></script>
+
+	<script>
+	$(function() {
+		$( "#sliderSize" ).slider({
+			value:2,
+			min: 0,
+			max: 20,
+			step: 2,
+			slide: function( event, ui ) {
+				$( "#sizeTh" ).val( ui.value + " MB" );
+			}
+		});
+		$( "#sizeTh" ).val( $( "#sliderSize" ).slider( "value" ) + " MB");
+	});
+	</script>
+	<script>
+	$(function() {
+		$( "#sliderTime" ).slider({
+			value:1,
+			min: 1,
+			max: 4,
+			step: 1,
+			slide: function( event, ui ) {
+				$( "#timeTh" ).val( ui.value + " weeks" );
+			}
+		});
+		$( "#timeTh" ).val( $( "#sliderTime" ).slider( "value" ) + " week");
+	});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+.user-search {
+margin: 0;
+}
+
+.user-search input {
+display: block;
+margin: 9px;
+}
+
+.device {
+background: lightyellow;
+}
+
+
+.widget-header a [class^="icon-"], .widget-header a [class*=" icon-"] {			
+	display: inline-block;
+	margin: 0px;
+	vertical-align: middle;
+	color: white;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+margin: 9px;
+}
+
+.device  th, td{
+border-top: none;
+}
