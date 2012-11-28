@@ -26,17 +26,17 @@
 
 <body>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
+<div id="myModal" class="modal hide fade span4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Add New Rule</h3>
   </div>
   <div class="modal-body">
     <p>Define the parameters for the rule using the fields below:</p>
-	<form id="new-rule" class="form-inline">
+	<form id="new-rule" class="form">
 		<fieldset>
 			<label for="viewMode">For</label>
-			<select id="viewMode" class="span1">
+			<select id="viewMode" class="span2">
 			  <option  selected>My</option>
 			  <option>My Team's</option>
 			  <option>All</option>
@@ -44,7 +44,8 @@
 			</select>
 			
 			<label for="objectType"></label>
-			<select id="objectType" class="span1">
+			<select id="objectType" class="span2">
+			  <option>Everything</option>
 			  <option  selected>Accounts</option>
 			  <option>Contacts</option>
 			  <option>Opportunities</option>
@@ -53,7 +54,7 @@
 			</select>
 
 			<label for="status"> with Status</label>
-			<select id="objectType" class="span1">
+			<select id="objectType" class="span2">
 			  <option  selected>Any</option>
 			  <option>Closed</option>
 			  <option>Pending</option>
@@ -62,7 +63,7 @@
 			</select>
 
 			<label for="change">AND</label>
-			<select id="change" class="span1">
+			<select id="change" class="span2">
 			  <option  selected>edited</option>
 			  <option>created</option>
 			</select>
@@ -195,7 +196,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-paper-clip"></i>
-	      				<h3>Attachment Settings</h3>
+	      				<h3>Default Attachment Settings</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
